@@ -64,6 +64,7 @@
     <script src="{{ asset('backend/assets/js/pages/dashboard.init.js') }}"></script>
     <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/admin-profile-edit.js') }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @include('../shared/toast-message')
   </body>
