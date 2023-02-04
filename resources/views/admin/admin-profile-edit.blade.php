@@ -28,11 +28,11 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="profilePic" class="col-sm-2 col-form-label">Profile Picture</label>
+                <label for="profile_pic" class="col-sm-2 col-form-label">Profile Picture</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="file" placeholder="Upload your profile picture" id="profile_pic" name="profile_pic">
-                  <div class="profile-pic-wrapper mt-3">
-                    <img class="profile-pic rounded avatar-xl" src="{{ $adminRow['profile_pic'] ? asset('uploads/admin-images/'. $adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
+                  <input class="preview-img-inp form-control" type="file" placeholder="Upload your profile picture" id="profile_pic" name="profile_pic">
+                  <div class="preview-img-wrapper profile-pic-wrapper mt-3">
+                    <img class="preview-img profile-pic rounded avatar-xl" src="{{ $adminRow['profile_pic'] ? asset('uploads/admin-images/'. $adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
                   </div>
                 </div>
               </div>
