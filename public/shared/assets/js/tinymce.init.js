@@ -1,7 +1,7 @@
-$(document).ready(function () {
-  0 < $("#elm1").length &&
+$(window).on("load", function () {
+  $.each($("[data-tinymce-inp]"), function (idx, el) {
     tinymce.init({
-      selector: "textarea#elm1",
+      selector: `textarea#${$(el).attr("id")}`,
       height: 300,
       plugins: [
         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
@@ -20,4 +20,5 @@ $(document).ready(function () {
         { title: "Table row 1", selector: "tr", classes: "tablerow1" },
       ],
     });
+  });
 });

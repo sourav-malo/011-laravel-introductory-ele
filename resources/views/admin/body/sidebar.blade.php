@@ -18,6 +18,12 @@
           </a>
         </li>
         <li>
+          <a href="{{ route('about-us.edit') }}" class=" waves-effect">
+          <i class="ri-calendar-2-line"></i>
+          <span>About Us Setup</span>
+          </a>
+        </li>
+        <li>
           <a href="calendar.html" class=" waves-effect">
           <i class="ri-calendar-2-line"></i>
           <span>Calendar</span>

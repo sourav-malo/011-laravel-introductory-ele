@@ -2,10 +2,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeBannerController;
+use App\Http\Controllers\AboutUsController;
 
 Route::get('/', function () {
   return view('frontend.index');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
   return view('admin.index');
@@ -23,6 +24,12 @@ Route::controller(AdminController::class)->group(function(){
 Route::controller(HomeBannerController::class)->group(function(){
   Route::get('/home-banner/edit', 'editHomeBanner')->name('home-banner.edit');
   Route::post('/home-banner/edit', 'editHomeBannerHandler')->name('home-banner.edit');
+});
+
+Route::controller(AboutUsController::class)->group(function(){
+  Route::get('/about-us', 'viewAboutUs')->name('about-us');
+  Route::get('/about-us/edit', 'editAboutUs')->name('about-us.edit');
+  Route::post('/about-us/edit', 'editAboutUsHandler')->name('about-us.edit');
 });
 
 require __DIR__.'/auth.php';
