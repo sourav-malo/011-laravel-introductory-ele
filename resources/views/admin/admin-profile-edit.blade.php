@@ -32,7 +32,7 @@
                 <div class="col-sm-10">
                   <input class="preview-img-inp form-control" type="file" placeholder="Upload your profile picture" id="profile_pic" name="profile_pic">
                   <div class="preview-img-wrapper profile-pic-wrapper mt-3">
-                    <img class="preview-img profile-pic rounded avatar-xl" src="{{ $adminRow['profile_pic'] ? asset('uploads/admin-images/'. $adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
+                    <img class="preview-img profile-pic rounded avatar-xl" src="{{ $adminRow['profile_pic'] ? asset($adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
                   </div>
                 </div>
               </div>

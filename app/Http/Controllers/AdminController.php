@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Models\User;
+use Image;
 
 class AdminController extends Controller
 {
@@ -44,13 +46,15 @@ class AdminController extends Controller
     $adminRow->email = $request->email;
 
     if($request->file('profile_pic')) {
-      $file = $request->file('profile_pic');
-      $filename = date('YmdHis') . $file->getClientOriginalName();
-      $file->move(public_path('uploads/admin-images'), $filename);
-      $adminRow['profile_pic'] = $filename;
+      $profilePicFile = $request->file('profile_pic');
+      $profilePicFilename = 'uploads/admin-images/'. Str::random(40) . '.' . $profilePicFile->extension();
+      Image::make($profilePicFile)->save($profilePicFilename);
+      $oldProfilePicFilename = $adminRow->profile_pic;
+      $adminRow->profile_pic = $profilePicFilename;
     }
 
     $adminRow->save();
+    !is_null($oldProfilePicFilename) && unlink($oldProfilePicFilename);
 
     $notification = [
       'alert-type' => 'success',

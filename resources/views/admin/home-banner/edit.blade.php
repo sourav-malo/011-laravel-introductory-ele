@@ -33,7 +33,7 @@
                 <div class="col-sm-10">
                   <input class="form-control preview-img-inp" type="file" placeholder="Upload banner image" id="banner_img" name="banner_img">
                   <div class="banner-image-wrapper preview-img-wrapper mt-3">
-                    <img class="banner-image preview-img rounded avatar-xl" src="{{ $homeBannerDetails['banner_img'] ? asset('uploads/banner-images/'. $homeBannerDetails['banner_img']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
+                    <img class="banner-image preview-img rounded avatar-xl" src="{{ $homeBannerDetails['banner_img'] ? asset($homeBannerDetails['banner_img']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
                   </div>
                 </div>
               </div>

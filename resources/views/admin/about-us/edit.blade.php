@@ -25,7 +25,7 @@
               <div class="row mb-3">
                 <label for="short_description" class="col-sm-2 col-form-label">Short Description</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" type="text" placeholder="Enter short description" id="short_description" name="short_description">{{ $aboutUsDetails->short_description }}</textarea>
+                  <textarea class="form-control" type="text" placeholder="Enter short description" id="short_description" rows="5" name="short_description">{{ $aboutUsDetails->short_description }}</textarea>
                 </div>
               </div>
               <div class="row mb-3">
@@ -35,12 +35,31 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="about_us_image" class="col-sm-2 col-form-label">About Us Image</label>
+                <label for="about_us_image" class="col-sm-2 col-form-label">Image</label>
                 <div class="col-sm-10">
                   <input class="form-control preview-img-inp" type="file" placeholder="Upload about us image" id="about_us_image" name="about_us_image">
                   <div class="about-us-image-wrapper preview-img-wrapper mt-3">
-                    <img class="about-us-image preview-img rounded avatar-xl" src="{{ $aboutUsDetails['about_us_image'] ? asset('uploads/about-us-images/'. $aboutUsDetails['about_us_image']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
+                    <img class="about-us-image preview-img rounded avatar-xl" src="{{ $aboutUsDetails['about_us_image'] ? asset($aboutUsDetails['about_us_image']) : asset('uploads/no_image.jpg') }}" alt="Card image cap">
                   </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="about_us_multi_images" class="col-sm-2 col-form-label">Multi Images</label>
+                <div class="col-sm-10">
+                  <input class="form-control mb-2" type="file" placeholder="Upload about us image" id="about_us_multi_images" name="about_us_multi_images[]" multiple>
+                  <span class="text-muted">Note: you can upload multiple images at once replacing the previous ones or customize one by one.</span>
+                  <ul class="about-us-multi-images-items list-unstyled d-flex flex-wrap">
+                    @php $editIdx = $deleteIdx = 0; @endphp
+                    @foreach(json_decode($aboutUsDetails->about_us_multi_images) as $multiImage)
+                      <li class="about-us-multi-images-item p-3">
+                        <img class="mb-2" src="{{ asset($multiImage) }}" alt="" width="120"> <br/>
+                        <label for="about_us_edit_multi_image_{{ $editIdx }}" class="btn btn-info">Edit</label>
+                        <input type="file" class="about_us_edit_multi_image d-none" id="about_us_edit_multi_image_{{ $editIdx }}" name="about_us_edit_multi_image_{{ $editIdx }}">
+                        <button type="button" data-idx="{{ $deleteIdx++ }}" class="about-us-multi-images-delete-btn mb-2 btn btn-danger">Delete</button>
+                      </li>
+                      @php $editIdx++; $deleteIdx++; @endphp
+                    @endforeach
+                  </ul>
                 </div>
               </div>
               <div class="row mb-3">

@@ -40,7 +40,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="about__image">
-            <img src="{{ $aboutUsDetails->about_us_image ? asset('uploads/about-us-images/'. $aboutUsDetails->about_us_image) : asset('uploads/no_image.jpg') }}" alt="" />
+            <img src="{{ $aboutUsDetails->about_us_image ? asset($aboutUsDetails->about_us_image) : asset('uploads/no_image.jpg') }}" alt="" />
           </div>
         </div>
         <div class="col-lg-6">

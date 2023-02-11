@@ -45,7 +45,7 @@
       <div class="dropdown d-inline-block user-dropdown">
         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="rounded-circle header-profile-user" src="{{ $adminRow['profile_pic'] ? asset('uploads/admin-images/'. $adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}"
+        <img class="rounded-circle header-profile-user" src="{{ $adminRow['profile_pic'] ? asset($adminRow['profile_pic']) : asset('uploads/no_image.jpg') }}"
           alt="Header Avatar">
         <span class="d-none d-xl-inline-block ms-1">{{ $adminRow->username }}</span>
         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

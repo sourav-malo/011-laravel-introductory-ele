@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\HomeBanner;
 use Image;
 
@@ -24,12 +25,14 @@ class HomeBannerController extends Controller
 
     if($request->file('banner_img')) {
       $bannerImageFile = $request->file('banner_img');
-      $bannerImageFilename = date('YmdHis') . $bannerImageFile->getClientOriginalName();
-      Image::make($bannerImageFile)->resize(636,852)->save('uploads/banner-images/'. $bannerImageFilename);
+      $bannerImageFilename = 'uploads/banner-images/'. Str::random(40) . $bannerImageFile->getClientOriginalName();
+      Image::make($bannerImageFile)->resize(636,852)->save($bannerImageFilename);
+      $oldBannerImg = $bannerDetails->banner_img; 
       $bannerDetails->banner_img = $bannerImageFilename;
     }
 
     $bannerDetails->save();
+    !is_null($oldBannerImg) && unlink($oldBannerImg);
 
     $notification = [
       'alert-type' => 'success',
