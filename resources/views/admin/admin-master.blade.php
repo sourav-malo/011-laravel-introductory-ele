@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
+    <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
     <!-- jquery.vectormap css -->
@@ -20,7 +21,7 @@
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    <link href="{{ asset('backend/assets/libs/toastr/build/toastr.min.css') }}" rel="stylesheet" type="text/css" />
   </head>
   <body data-topbar="dark">
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
@@ -57,7 +58,7 @@
     <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}"></script>
     <!-- Required datatable js -->
     <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <!-- Responsive examples -->
     <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
@@ -65,11 +66,15 @@
     <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/toastr/build/toastr.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- init js -->
     <script src="{{ asset('shared/assets/js/tinymce.init.js') }}"></script>
+    <script src="{{ asset('shared/assets/js/datatables.init.js') }}"></script>
     <script src="{{ asset('shared/assets/js/preview-image-before-upload.js') }}"></script>
     <script src="{{ asset('backend/assets/js/about-us-edit.js') }}"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="{{ asset('backend/assets/js/portfolio.index.js') }}"></script>
+
     @include('../shared/toast-message')
   </body>
 </html>

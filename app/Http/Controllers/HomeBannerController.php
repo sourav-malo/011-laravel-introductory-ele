@@ -23,6 +23,7 @@ class HomeBannerController extends Controller
     $bannerDetails->short_text = $request->short_text;
     $bannerDetails->video_url = $request->video_url;
 
+    $oldBannerImg = null;
     if($request->file('banner_img')) {
       $bannerImageFile = $request->file('banner_img');
       $bannerImageFilename = 'uploads/banner-images/'. Str::random(40) . $bannerImageFile->getClientOriginalName();
@@ -36,7 +37,7 @@ class HomeBannerController extends Controller
 
     $notification = [
       'alert-type' => 'success',
-      'message' => "Home banner updated successfully ". $request->file('banner_img') ? 'with' : 'without' ." image"
+      'message' => $request->file('banner_img') ? "Home banner updated successfully with image" : "Home banner updated successfully without image"
     ];
 
     return redirect()->back()->with($notification);

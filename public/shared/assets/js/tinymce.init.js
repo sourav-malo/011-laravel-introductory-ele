@@ -9,7 +9,7 @@ $(window).on("load", function () {
         "save table contextmenu directionality emoticons template paste textcolor",
       ],
       toolbar:
-        "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+        "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
       style_formats: [
         { title: "Bold text", inline: "b" },
         { title: "Red text", inline: "span", styles: { color: "#ff0000" } },

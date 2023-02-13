@@ -12,22 +12,24 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('home-banner.edit') }}" class=" waves-effect">
-          <i class="ri-calendar-2-line"></i>
-          <span>Home Banner Setup</span>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+          <i class="ri-bank-fill"></i>
+          <span>Home</span>
           </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('home-banner.edit') }}">Banner</a></li>
+            <li><a href="{{ route('about-us.edit') }}">About Us</a></li>
+          </ul>
         </li>
         <li>
-          <a href="{{ route('about-us.edit') }}" class=" waves-effect">
-          <i class="ri-calendar-2-line"></i>
-          <span>About Us Setup</span>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+          <i class="ri-image-2-fill"></i>
+          <span>Portfolios</span>
           </a>
-        </li>
-        <li>
-          <a href="calendar.html" class=" waves-effect">
-          <i class="ri-calendar-2-line"></i>
-          <span>Calendar</span>
-          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('portfolios.index') }}">Show Portfolios</a></li>
+            <li><a href="{{ route('portfolios.create') }}">Create Portfolio</a></li>
+          </ul>
         </li>
         <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">

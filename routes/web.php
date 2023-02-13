@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeBannerController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\PortfolioController;
 
 Route::get('/', function () {
   return view('frontend.index');
@@ -31,6 +32,16 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/about-us', 'viewAboutUs')->name('about-us')->withoutMiddleware(['auth', 'verified']);
     Route::get('/about-us/edit', 'editAboutUs')->name('about-us.edit');
     Route::post('/about-us/edit', 'editAboutUsHandler')->name('about-us.edit');
+  });
+
+  Route::controller(PortfolioController::class)->group(function(){
+    Route::get('/portfolios', 'index')->name('portfolios.index');
+    Route::get('/portfolios/create', 'create')->name('portfolios.create');
+    Route::post('/portfolios', 'store')->name('portfolios.store');
+    Route::get('/portfolios/{id}', 'show')->name('portfolios.show');
+    Route::get('/portfolios/{id}/edit', 'edit')->name('portfolios.edit');
+    Route::put('/portfolios/{id}', 'update')->name('portfolios.update');
+    Route::delete('/portfolios/{id}', 'destroy')->name('portfolios.destroy');
   });
 });
 
