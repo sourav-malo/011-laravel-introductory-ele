@@ -18,6 +18,7 @@
     <!-- Bootstrap Css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
+    <link href="{{ asset('backend/assets/libs/tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
@@ -68,12 +69,14 @@
     <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/toastr/build/toastr.min.js') }}"></script>
     <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+    <script src="{{ asset('shared/assets/js/sweetalert2.init.js') }}"></script>
+    <script src="{{ asset('shared/assets/js/tagsinput.init.js') }}"></script>
     <!-- init js -->
     <script src="{{ asset('shared/assets/js/tinymce.init.js') }}"></script>
     <script src="{{ asset('shared/assets/js/datatables.init.js') }}"></script>
     <script src="{{ asset('shared/assets/js/preview-image-before-upload.js') }}"></script>
     <script src="{{ asset('backend/assets/js/about-us-edit.js') }}"></script>
-    <script src="{{ asset('backend/assets/js/portfolio.index.js') }}"></script>
 
     @include('../shared/toast-message')
   </body>

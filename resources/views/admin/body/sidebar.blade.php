@@ -7,7 +7,7 @@
         <li class="menu-title">Menu</li>
         <li>
           <a href="{{ route('dashboard') }}" class="waves-effect">
-          <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
+          <i class="ri-dashboard-line"></i>
           <span>Dashboard</span>
           </a>
         </li>
@@ -32,6 +32,18 @@
           </ul>
         </li>
         <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+          <i class="fas fa-blog"></i>
+          <span>Blogs</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('blog_categories.index') }}">Show Categories</a></li>
+            <li><a href="{{ route('blog_categories.create') }}">Create Category</a></li>
+            <li><a href="{{ route('blog_posts.index') }}">Show Posts</a></li>
+            <li><a href="{{ route('blog_posts.create') }}">Create Post</a></li>
+          </ul>
+        </li>
+        <!-- <li>
           <a href="javascript: void(0);" class="has-arrow waves-effect">
           <i class="ri-mail-send-line"></i>
           <span>Email</span>
@@ -96,7 +108,7 @@
             <li><a href="pages-404.html">Error 404</a></li>
             <li><a href="pages-500.html">Error 500</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
     <!-- Sidebar -->
