@@ -19,6 +19,7 @@
           <ul class="sub-menu" aria-expanded="false">
             <li><a href="{{ route('home-banner.edit') }}">Banner</a></li>
             <li><a href="{{ route('about-us.edit') }}">About Us</a></li>
+            <li><a href="{{ route('footer.edit') }}">Footer</a></li>
           </ul>
         </li>
         <li>
@@ -41,6 +42,15 @@
             <li><a href="{{ route('blog_categories.create') }}">Create Category</a></li>
             <li><a href="{{ route('blog_posts.index') }}">Show Posts</a></li>
             <li><a href="{{ route('blog_posts.create') }}">Create Post</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+          <i class="fas fa-blog"></i>
+          <span>Contact Messages</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="{{ route('contact_me.index') }}">Show All</a></li>
           </ul>
         </li>
         <!-- <li>

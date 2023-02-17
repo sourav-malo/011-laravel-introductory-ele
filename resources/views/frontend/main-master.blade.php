@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    <link href="{{ asset('backend/assets/libs/toastr/build/toastr.min.css') }}" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <!-- preloader-start -->
@@ -50,5 +51,8 @@
     <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/toastr/build/toastr.min.js') }}"></script>
+
+    @include('../shared/toast-message')
   </body>
 </html>

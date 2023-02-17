@@ -6,6 +6,8 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\FooterController;
+use App\Http\Controllers\ContactMessageController;
 
 Route::get('/', function () {
   return view('frontend.index');
@@ -65,6 +67,18 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/blog-posts/{id}/edit', 'edit')->name('blog_posts.edit');
     Route::put('/blog-posts/{id}', 'update')->name('blog_posts.update');
     Route::delete('/blog-posts/{id}', 'destroy')->name('blog_posts.destroy');
+  });
+
+  Route::controller(FooterController::class)->group(function(){
+    Route::get('/footer/edit', 'edit')->name('footer.edit');
+    Route::put('/footer/update', 'update')->name('footer.update');
+  });
+
+  Route::controller(ContactMessageController::class)->group(function(){
+    Route::get('/contact-me/all', 'index')->name('contact_me.index');
+    Route::post('/contact-me', 'store')->name('contact_me.store');
+    Route::get('/contact-me', 'show')->name('contact_me.show');
+    Route::delete('/contact-me/{id}', 'destroy')->name('contact_me.destroy');
   });
 });
 
