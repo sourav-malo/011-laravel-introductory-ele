@@ -15,13 +15,11 @@ class BlogPostController extends Controller {
     return view('admin.blog-posts.index', compact('posts')); 
   }
 
-  public function indexFilter() {
+  public function indexUser() {
     $posts = BlogPost::when(request('category_id'), function($query) {
         return $query->where('blog_category_id', request('category_id'));
       })
-      ->latest()
-      ->limit(4)
-      ->get();
+      ->paginate(4);
 
     return view('frontend.blogs.index', compact('posts')); 
   }

@@ -1,4 +1,9 @@
 @extends('frontend.main-master') 
+
+@section('title')
+  Rasalina | About Us
+@endsection('title')
+
 @section('main')
 
 <main>

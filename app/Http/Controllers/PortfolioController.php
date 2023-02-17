@@ -14,6 +14,12 @@ class PortfolioController extends Controller {
     return view('admin.portfolios.index', compact('portfolios')); 
   }
 
+  public function indexUser() {
+    $portfolios = Portfolio::paginate(4);
+
+    return view('frontend.portfolios.index', compact('portfolios')); 
+  }
+
   public function create() {
     return view('admin.portfolios.create'); 
   }

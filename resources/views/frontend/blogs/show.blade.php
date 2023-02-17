@@ -287,7 +287,7 @@
               <ul class="sidebar__cat">
                 @foreach($categories as $category)
                   <li class="sidebar__cat__item">
-                    <a href="{{ route('blog_posts_filter.index') }}?category_id={{ $category->id }}">{{ $category->name }}</a>
+                    <a href="{{ route('blog_posts_user.index') }}?category_id={{ $category->id }}">{{ $category->name }}</a>
                   </li>
                 @endforeach
               </ul>

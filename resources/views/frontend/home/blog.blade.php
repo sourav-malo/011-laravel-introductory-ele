@@ -13,7 +13,7 @@
                 <img src="{{ $post->image ? asset($post->image) : asset('uploads/no_image.jpg') }}" alt="">
               </a>
               <div class="blog__post__tags">
-                <a href="">{{ $post->blogCategory->name }}</a>
+                <a href="{{ route('blog_posts_user.index') }}?category_id={{ $post->blogCategory->id }}">{{ $post->blogCategory->name }}</a>
               </div>
             </div>
             <div class="blog__post__content">

@@ -12,28 +12,15 @@
               </div>
               <div class="navbar__wrap main__menu d-none d-xl-flex">
                 <ul class="navigation">
-                  <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                  <li><a href="{{ route('about-us') }}">About</a></li>
-                  <li><a href="services-details.html">Services</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">Portfolio</a>
-                    <ul class="sub-menu">
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item-has-children">
-                    <a href="#">Our Blog</a>
-                    <ul class="sub-menu">
-                      <li><a href="{{ route('blog_posts_filter.index') }}">Our News</a></li>
-                      <li><a href="blog-details.html">News Details</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="{{ route('contact_me.show') }}">contact me</a></li>
+                  <li class="{{ Route::currentRouteName() == 'home' ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                  <li class="{{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}"><a href="{{ route('about-us') }}">About</a></li>
+                  <li class="{{ Route::currentRouteName() == 'portfolios_user.index' ? 'active' : '' }}"><a href="{{ route('portfolios_user.index') }}">Portfolio</a></li>
+                  <li class="{{ Route::currentRouteName() == 'blog_posts_user.index' ? 'active' : '' }}"><a href="{{ route('blog_posts_user.index') }}">Our Blog</a></li>
+                  <li class="{{ Route::currentRouteName() == 'contact_me.show' ? 'active' : '' }}"><a href="{{ route('contact_me.show') }}">contact me</a></li>
                 </ul>
               </div>
               <div class="header__btn d-none d-md-block">
-                <a href="contact.html" class="btn">Contact me</a>
+                <a href="{{ route('contact_me.show') }}" class="btn">Contact me</a>
               </div>
             </nav>
           </div>

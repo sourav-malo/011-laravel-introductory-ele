@@ -9,13 +9,8 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ContactMessageController;
 
-Route::get('/', function () {
-  return view('frontend.index');
-})->name('home');
-
-Route::get('/dashboard', function () {
-  return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/', 'frontend.index')->name('home');
+Route::view('/dashboard', 'admin.index')->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function(){
   Route::controller(AdminController::class)->group(function(){
@@ -40,6 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
   Route::controller(PortfolioController::class)->group(function(){
     Route::get('/portfolios', 'index')->name('portfolios.index');
+    Route::get('/portfolios-user', 'indexUser')->name('portfolios_user.index');
     Route::get('/portfolios/create', 'create')->name('portfolios.create');
     Route::post('/portfolios', 'store')->name('portfolios.store');
     Route::get('/portfolios/{id}', 'show')->name('portfolios.show');
@@ -60,7 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
   Route::controller(BlogPostController::class)->group(function(){
     Route::get('/blog-posts', 'index')->name('blog_posts.index');
-    Route::get('/blog-posts-filter', 'indexFilter')->name('blog_posts_filter.index');
+    Route::get('/blog-posts-user', 'indexUser')->name('blog_posts_user.index');
     Route::get('/blog-posts/create', 'create')->name('blog_posts.create');
     Route::post('/blog-posts', 'store')->name('blog_posts.store');
     Route::get('/blog-posts/{id}', 'show')->name('blog_posts.show');
